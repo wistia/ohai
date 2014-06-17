@@ -23,6 +23,7 @@
 * [**Vasiliy Tolstov**:](https://github.com/vtolstov)
   add exherbo support (OHAI-570)
 
+* root_group provider not implemented for Windows (OHAI-491)
 * `Ohai::Exceptions::AttributeNotFound` errors in Chef's ohai resource
 * Be reluctant to call something an LXC host (OHAI-573)
 
