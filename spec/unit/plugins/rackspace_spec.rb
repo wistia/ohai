@@ -118,6 +118,15 @@ OUT
       @plugin.run
       @plugin[:rackspace][:region].should == "dfw"
     end
+
+    it "should capture instance id information" do
+      name_data = <<-OUT
+instance-00000000-0000-0000-0000-000000000001
+OUT
+      @plugin.stub(:shell_out).with("xenstore-read name").and_return(mock_shell_out(0, name_data, ""))
+      @plugin.run
+      @plugin[:rackspace][:instance_id].should == "00000000-0000-0000-0000-000000000001"
+    end
   end
 
   describe "with rackspace cloud file" do
